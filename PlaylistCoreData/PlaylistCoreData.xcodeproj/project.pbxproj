@@ -8,22 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		99B7300922FB375A00634905 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B7300822FB375A00634905 /* AppDelegate.swift */; };
-		99B7300B22FB375A00634905 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B7300A22FB375A00634905 /* ViewController.swift */; };
 		99B7300E22FB375A00634905 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99B7300C22FB375A00634905 /* Main.storyboard */; };
 		99B7301122FB375A00634905 /* PlaylistCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 99B7300F22FB375A00634905 /* PlaylistCoreData.xcdatamodeld */; };
 		99B7301322FB375B00634905 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99B7301222FB375B00634905 /* Assets.xcassets */; };
 		99B7301622FB375B00634905 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99B7301422FB375B00634905 /* LaunchScreen.storyboard */; };
+		99B7301E22FB3BEF00634905 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B7301D22FB3BEF00634905 /* CoreDataStack.swift */; };
+		99B7302122FB3F3900634905 /* Playlist+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B7302022FB3F3900634905 /* Playlist+Convenience.swift */; };
+		99B7302322FB40CB00634905 /* Song+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B7302222FB40CB00634905 /* Song+Convenience.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		99B7300522FB375A00634905 /* PlaylistCoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlaylistCoreData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99B7300822FB375A00634905 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		99B7300A22FB375A00634905 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		99B7300D22FB375A00634905 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		99B7301022FB375A00634905 /* PlaylistCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PlaylistCoreData.xcdatamodel; sourceTree = "<group>"; };
 		99B7301222FB375B00634905 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		99B7301522FB375B00634905 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		99B7301722FB375B00634905 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		99B7301D22FB3BEF00634905 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		99B7302022FB3F3900634905 /* Playlist+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Playlist+Convenience.swift"; sourceTree = "<group>"; };
+		99B7302222FB40CB00634905 /* Song+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Song+Convenience.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,33 @@
 		99B7300722FB375A00634905 /* PlaylistCoreData */ = {
 			isa = PBXGroup;
 			children = (
-				99B7300822FB375A00634905 /* AppDelegate.swift */,
-				99B7300A22FB375A00634905 /* ViewController.swift */,
 				99B7300C22FB375A00634905 /* Main.storyboard */,
-				99B7301222FB375B00634905 /* Assets.xcassets */,
-				99B7301422FB375B00634905 /* LaunchScreen.storyboard */,
-				99B7301722FB375B00634905 /* Info.plist */,
+				99B7302422FB42E100634905 /* Model */,
+				99B7301F22FB3EA900634905 /* Resources */,
 				99B7300F22FB375A00634905 /* PlaylistCoreData.xcdatamodeld */,
 			);
 			path = PlaylistCoreData;
+			sourceTree = "<group>";
+		};
+		99B7301F22FB3EA900634905 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				99B7300822FB375A00634905 /* AppDelegate.swift */,
+				99B7301222FB375B00634905 /* Assets.xcassets */,
+				99B7301422FB375B00634905 /* LaunchScreen.storyboard */,
+				99B7301722FB375B00634905 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		99B7302422FB42E100634905 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				99B7302222FB40CB00634905 /* Song+Convenience.swift */,
+				99B7302022FB3F3900634905 /* Playlist+Convenience.swift */,
+				99B7301D22FB3BEF00634905 /* CoreDataStack.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +160,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				99B7300B22FB375A00634905 /* ViewController.swift in Sources */,
 				99B7300922FB375A00634905 /* AppDelegate.swift in Sources */,
+				99B7302322FB40CB00634905 /* Song+Convenience.swift in Sources */,
 				99B7301122FB375A00634905 /* PlaylistCoreData.xcdatamodeld in Sources */,
+				99B7301E22FB3BEF00634905 /* CoreDataStack.swift in Sources */,
+				99B7302122FB3F3900634905 /* Playlist+Convenience.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,7 +311,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = PlaylistCoreData/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/PlaylistCoreData/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,7 +328,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = PlaylistCoreData/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/PlaylistCoreData/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
